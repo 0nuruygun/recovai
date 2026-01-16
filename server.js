@@ -10,6 +10,8 @@ app.set('views');
 app.use(cors());
 app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
+app.use('/login', require('./routes/login.routes'));
 app.use('/dashboard', require('./routes/coach.routes'));
 app.use('/api/profile', require('./routes/profile.routes'));
 app.use('/api/metrics', require('./routes/metrics.routes'));
